@@ -1,0 +1,1634 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mentoria executiva em liderança na era da inteligência artificial para líderes C-level">
+    <title>Mentoria Executiva - Liderança na Era da IA | Dr. Ricardo Almeida</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-dark: #1a2332;
+            --primary-blue: #2c3e50;
+            --accent-gold: #c9a961;
+            --text-dark: #2d3436;
+            --text-light: #636e72;
+            --background-light: #f8f9fa;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .container-narrow {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: var(--white);
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-dark);
+        }
+
+        .header-cta {
+            background: var(--accent-gold);
+            color: var(--white);
+            padding: 12px 28px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            border: 2px solid var(--accent-gold);
+        }
+
+        .header-cta:hover {
+            background: transparent;
+            color: var(--accent-gold);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1a2332 0%, #2c3e50 100%);
+            color: var(--white);
+            padding: 100px 0 120px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
+            opacity: 0.5;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(201, 169, 97, 0.2);
+            color: var(--accent-gold);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(201, 169, 97, 0.3);
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 58px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 30px;
+            letter-spacing: -0.5px;
+        }
+
+        .hero-highlight {
+            color: var(--accent-gold);
+            position: relative;
+            display: inline-block;
+        }
+
+        .hero p {
+            font-size: 22px;
+            line-height: 1.6;
+            margin-bottom: 40px;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 300;
+        }
+
+        .hero-cta-group {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: var(--accent-gold);
+            color: var(--white);
+            padding: 18px 40px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            display: inline-block;
+            border: 2px solid var(--accent-gold);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(201, 169, 97, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            padding: 18px 40px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            display: inline-block;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--white);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin-top: 60px;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 42px;
+            font-weight: 700;
+            color: var(--accent-gold);
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 400;
+        }
+
+        /* Trust Bar */
+        .trust-bar {
+            background: var(--white);
+            padding: 50px 0;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .trust-content {
+            text-align: center;
+        }
+
+        .trust-title {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--text-light);
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+
+        .trust-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .trust-logo {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-light);
+            opacity: 0.6;
+            transition: opacity 0.3s ease;
+        }
+
+        .trust-logo:hover {
+            opacity: 1;
+        }
+
+        /* Problem Section */
+        .problem-section {
+            padding: 100px 0;
+            background: var(--background-light);
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 60px;
+        }
+
+        .section-label {
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent-gold);
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 25px;
+            line-height: 1.3;
+        }
+
+        .section-subtitle {
+            font-size: 20px;
+            color: var(--text-light);
+            line-height: 1.7;
+            font-weight: 300;
+        }
+
+        .problems-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .problem-card {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .problem-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        .problem-icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        .problem-card h3 {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--primary-dark);
+        }
+
+        .problem-card p {
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        /* Mentor Section */
+        .mentor-section {
+            padding: 100px 0;
+            background: var(--white);
+        }
+
+        .mentor-content {
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            gap: 60px;
+            align-items: start;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .mentor-image-wrapper {
+            position: relative;
+        }
+
+        .mentor-image {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 80px;
+            font-weight: 700;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+
+        .mentor-badge {
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--accent-gold);
+            color: var(--white);
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 600;
+            white-space: nowrap;
+            box-shadow: 0 10px 30px rgba(201, 169, 97, 0.3);
+        }
+
+        .mentor-info h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 38px;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 15px;
+        }
+
+        .mentor-title {
+            font-size: 18px;
+            color: var(--accent-gold);
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+
+        .mentor-bio {
+            font-size: 17px;
+            line-height: 1.8;
+            color: var(--text-dark);
+            margin-bottom: 30px;
+        }
+
+        .mentor-credentials {
+            list-style: none;
+            margin-top: 30px;
+        }
+
+        .mentor-credentials li {
+            padding: 12px 0;
+            border-bottom: 1px solid #e9ecef;
+            color: var(--text-dark);
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .mentor-credentials li:before {
+            content: "✓";
+            color: var(--accent-gold);
+            font-weight: 700;
+            margin-right: 12px;
+            font-size: 18px;
+        }
+
+        .mentor-credentials li:last-child {
+            border-bottom: none;
+        }
+
+        /* Benefits Section */
+        .benefits-section {
+            padding: 100px 0;
+            background: var(--primary-dark);
+            color: var(--white);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .benefit-card {
+            text-align: center;
+            padding: 40px 30px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .benefit-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-5px);
+        }
+
+        .benefit-icon {
+            font-size: 50px;
+            margin-bottom: 25px;
+        }
+
+        .benefit-card h3 {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--accent-gold);
+        }
+
+        .benefit-card p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.7;
+        }
+
+        /* Methodology Section */
+        .methodology-section {
+            padding: 100px 0;
+            background: var(--white);
+        }
+
+        .methodology-steps {
+            display: grid;
+            gap: 40px;
+            margin-top: 60px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .step-card {
+            display: grid;
+            grid-template-columns: 80px 1fr;
+            gap: 30px;
+            padding: 40px;
+            background: var(--background-light);
+            border-radius: 12px;
+            border-left: 4px solid var(--accent-gold);
+            transition: all 0.3s ease;
+        }
+
+        .step-card:hover {
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            transform: translateX(5px);
+        }
+
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background: var(--accent-gold);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .step-content h3 {
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--primary-dark);
+            margin-bottom: 15px;
+        }
+
+        .step-content p {
+            color: var(--text-light);
+            line-height: 1.7;
+            font-size: 16px;
+        }
+
+        /* Program Details Section */
+        .program-section {
+            padding: 100px 0;
+            background: var(--background-light);
+        }
+
+        .program-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .program-card {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        .program-card h3 {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--primary-dark);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .program-card h3:before {
+            content: "→";
+            color: var(--accent-gold);
+            margin-right: 12px;
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .program-card ul {
+            list-style: none;
+        }
+
+        .program-card li {
+            padding: 10px 0;
+            color: var(--text-dark);
+            display: flex;
+            align-items: start;
+        }
+
+        .program-card li:before {
+            content: "•";
+            color: var(--accent-gold);
+            margin-right: 12px;
+            font-size: 20px;
+            line-height: 1.5;
+        }
+
+        /* Testimonials Section */
+        .testimonials-section {
+            padding: 100px 0;
+            background: var(--white);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .testimonial-card {
+            background: var(--background-light);
+            padding: 40px;
+            border-radius: 12px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+        }
+
+        .quote-icon {
+            font-size: 50px;
+            color: var(--accent-gold);
+            opacity: 0.3;
+            line-height: 1;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-text {
+            font-size: 16px;
+            line-height: 1.8;
+            color: var(--text-dark);
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .author-avatar {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--accent-gold), #d4af37);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 20px;
+        }
+
+        .author-info h4 {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--primary-dark);
+            margin-bottom: 3px;
+        }
+
+        .author-info p {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        .rating {
+            color: var(--accent-gold);
+            font-size: 18px;
+            margin-top: 20px;
+        }
+
+        /* For Whom Section */
+        .for-whom-section {
+            padding: 100px 0;
+            background: var(--primary-dark);
+            color: var(--white);
+        }
+
+        .for-whom-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .for-whom-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 35px;
+            border-radius: 12px;
+            text-align: center;
+            border: 2px solid rgba(201, 169, 97, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .for-whom-card:hover {
+            border-color: var(--accent-gold);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .for-whom-card h3 {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--accent-gold);
+            margin-bottom: 15px;
+        }
+
+        .for-whom-card p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.7;
+            font-size: 15px;
+        }
+
+        /* Investment Section */
+        .investment-section {
+            padding: 100px 0;
+            background: var(--white);
+        }
+
+        .investment-card {
+            max-width: 800px;
+            margin: 60px auto 0;
+            background: var(--background-light);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+        }
+
+        .investment-header {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary-blue));
+            color: var(--white);
+            padding: 50px;
+            text-align: center;
+        }
+
+        .investment-header h3 {
+            font-size: 18px;
+            font-weight: 400;
+            margin-bottom: 15px;
+            opacity: 0.9;
+        }
+
+        .investment-price {
+            font-size: 64px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--accent-gold);
+        }
+
+        .investment-installment {
+            font-size: 18px;
+            opacity: 0.9;
+        }
+
+        .investment-body {
+            padding: 50px;
+        }
+
+        .investment-includes h4 {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--primary-dark);
+            margin-bottom: 25px;
+        }
+
+        .investment-includes ul {
+            list-style: none;
+            margin-bottom: 40px;
+        }
+
+        .investment-includes li {
+            padding: 15px 0;
+            border-bottom: 1px solid #e9ecef;
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+            color: var(--text-dark);
+        }
+
+        .investment-includes li:last-child {
+            border-bottom: none;
+        }
+
+        .investment-includes li:before {
+            content: "✓";
+            color: var(--accent-gold);
+            font-weight: 700;
+            margin-right: 15px;
+            font-size: 20px;
+        }
+
+        .investment-cta {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .investment-cta .btn-primary {
+            width: 100%;
+            max-width: 100%;
+            font-size: 18px;
+            padding: 22px 40px;
+        }
+
+        .investment-guarantee {
+            text-align: center;
+            margin-top: 30px;
+            padding: 25px;
+            background: #fff3cd;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-gold);
+        }
+
+        .investment-guarantee p {
+            font-size: 14px;
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        .investment-guarantee strong {
+            color: var(--primary-dark);
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 100px 0;
+            background: var(--background-light);
+        }
+
+        .faq-list {
+            max-width: 900px;
+            margin: 60px auto 0;
+        }
+
+        .faq-item {
+            background: var(--white);
+            margin-bottom: 20px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .faq-question {
+            padding: 30px;
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--primary-dark);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question:hover {
+            color: var(--accent-gold);
+        }
+
+        .faq-question:after {
+            content: "+";
+            font-size: 28px;
+            color: var(--accent-gold);
+            font-weight: 400;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-question:after {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-answer-content {
+            padding: 0 30px 30px;
+            color: var(--text-light);
+            line-height: 1.8;
+            font-size: 16px;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary-blue));
+            color: var(--white);
+            text-align: center;
+        }
+
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 25px;
+            line-height: 1.3;
+        }
+
+        .cta-content p {
+            font-size: 20px;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            line-height: 1.7;
+        }
+
+        .cta-urgency {
+            display: inline-block;
+            background: rgba(201, 169, 97, 0.2);
+            color: var(--accent-gold);
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-top: 30px;
+            border: 1px solid rgba(201, 169, 97, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-dark);
+            color: rgba(255, 255, 255, 0.7);
+            padding: 50px 0 30px;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        footer a {
+            color: var(--accent-gold);
+            text-decoration: none;
+        }
+
+        .footer-legal {
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 13px;
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            .section-title {
+                font-size: 32px;
+            }
+
+            .mentor-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .mentor-image {
+                height: 350px;
+            }
+
+            .step-card {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .hero-cta-group {
+                flex-direction: column;
+            }
+
+            .btn-primary, .btn-secondary {
+                width: 100%;
+                max-width: 400px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .hero {
+                padding: 60px 0 80px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .stat-number {
+                font-size: 32px;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+
+            .investment-price {
+                font-size: 48px;
+            }
+
+            .header-cta {
+                display: none;
+            }
+
+            .trust-logos {
+                gap: 30px;
+            }
+
+            .trust-logo {
+                font-size: 16px;
+            }
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Selection */
+        ::selection {
+            background: var(--accent-gold);
+            color: var(--white);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">Dr. Ricardo Almeida</div>
+                <a href="#investimento" class="header-cta">Quero participar</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">Mentoria executiva exclusiva</div>
+                <h1>Lidere a transformação da <span class="hero-highlight">inteligência artificial</span> na sua organização</h1>
+                <p>Mentoria estratégica para líderes C-level que desejam dominar a implementação de IA, tomar decisões data-driven e criar vantagem competitiva sustentável em mercados disruptivos</p>
+                <div class="hero-cta-group">
+                    <a href="#investimento" class="btn-primary">Garantir minha vaga</a>
+                    <a href="#metodologia" class="btn-secondary">Conhecer a metodologia</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">25+</span>
+                        <span class="stat-label">Anos de experiência</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">200+</span>
+                        <span class="stat-label">Executivos mentorados</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">R$ 2,4bi</span>
+                        <span class="stat-label">Em valor gerado</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Bar -->
+    <section class="trust-bar">
+        <div class="container">
+            <div class="trust-content">
+                <p class="trust-title">Executivos de empresas líderes confiam nesta mentoria</p>
+                <div class="trust-logos">
+                    <span class="trust-logo">Empresa Alpha</span>
+                    <span class="trust-logo">Grupo Beta</span>
+                    <span class="trust-logo">Companhia Gamma</span>
+                    <span class="trust-logo">Corporação Delta</span>
+                    <span class="trust-logo">Holding Epsilon</span>
+                    <span class="trust-logo">Conglomerado Zeta</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="problem-section">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-label">O desafio da liderança moderna</p>
+                <h2 class="section-title">A inteligência artificial está redefinindo todas as indústrias. Você está preparado?</h2>
+                <p class="section-subtitle">Líderes C-level enfrentam pressões crescentes para implementar IA estrategicamente, mas poucos têm o conhecimento e a visão necessários para fazê-lo com confiança.</p>
+            </div>
+            <div class="problems-grid">
+                <div class="problem-card">
+                    <div class="problem-icon">⚡</div>
+                    <h3>Velocidade de mudança</h3>
+                    <p>As tecnologias de IA evoluem exponencialmente. Decisões tomadas há 6 meses já estão obsoletas, e a pressão por resultados imediatos é constante.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">🎯</div>
+                    <h3>Investimento estratégico</h3>
+                    <p>Cada investimento em IA representa milhões em capital e recursos. Um erro de direcionamento pode custar anos de vantagem competitiva.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">🔄</div>
+                    <h3>Transformação cultural</h3>
+                    <p>Implementar IA não é apenas tecnologia - é uma mudança organizacional profunda que exige liderança visionária e capacidade de gestão de mudança.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">📊</div>
+                    <h3>Decisões data-driven</h3>
+                    <p>Seus concorrentes já estão usando IA para tomar decisões mais rápidas e precisas. Cada dia de atraso significa perda de market share.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">👥</div>
+                    <h3>Talento e capacitação</h3>
+                    <p>Atrair e reter especialistas em IA é um desafio global. Como preparar suas equipes para o futuro do trabalho?</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">🚀</div>
+                    <h3>Legado e inovação</h3>
+                    <p>Como equilibrar a transformação digital com operações estabelecidas? Como construir um legado de inovação que transcenda sua gestão?</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mentor Section -->
+    <section class="mentor-section" id="mentor">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-label">Seu mentor</p>
+                <h2 class="section-title">Experiência comprovada em transformação estratégica</h2>
+            </div>
+            <div class="mentor-content">
+                <div class="mentor-image-wrapper">
+                    <div class="mentor-image">RA</div>
+                    <div class="mentor-badge">25 anos de experiência</div>
+                </div>
+                <div class="mentor-info">
+                    <h2>Dr. Ricardo Almeida</h2>
+                    <p class="mentor-title">Especialista em liderança estratégica e transformação digital</p>
+                    <div class="mentor-bio">
+                        <p>Durante mais de duas décadas, liderei transformações digitais em algumas das maiores organizações do Brasil e América Latina. Como ex-CEO de multinacionais e conselheiro de empresas unicórnio, vivi na prática os desafios que você enfrenta hoje.</p>
+                        <p style="margin-top: 20px;">Minha missão é acelerar a jornada de líderes visionários que querem posicionar suas organizações na vanguarda da era da inteligência artificial. Não trabalho com teoria - trabalho com estratégias práticas, testadas e validadas em ambientes de alta pressão.</p>
+                    </div>
+                    <ul class="mentor-credentials">
+                        <li>PhD em administração estratégica pela FGV</li>
+                        <li>Ex-CEO de 3 empresas multinacionais com faturamento combinado de R$ 4,2 bilhões</li>
+                        <li>Professor convidado da FGV e Insper em programas executivos</li>
+                        <li>Advisor e investidor em 12 startups, incluindo 2 unicórnios brasileiros</li>
+                        <li>Palestrante internacional em conferências de liderança e inovação</li>
+                        <li>Certificação executiva em IA estratégica pelo MIT</li>
+                        <li>Autor de artigos sobre transformação digital publicados em Harvard Business Review</li>
+                        <li>Membro do conselho consultivo de organizações líderes em tecnologia</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-label">Transformação real</p>
+                <h2 class="section-title" style="color: white;">O que você vai conquistar com esta mentoria</h2>
+                <p class="section-subtitle" style="color: rgba(255,255,255,0.8);">Resultados tangíveis e mensuráveis que impactam diretamente sua liderança, sua organização e seu legado profissional.</p>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">🎯</div>
+                    <h3>Visão estratégica de IA</h3>
+                    <p>Desenvolva uma compreensão profunda de como a IA pode transformar seu modelo de negócio e criar vantagens competitivas sustentáveis.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">💡</div>
+                    <h3>Roadmap de implementação</h3>
+                    <p>Saia com um plano personalizado de 12-24 meses para implementar IA em pontos estratégicos da sua organização.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">📈</div>
+                    <h3>Decisões data-driven</h3>
+                    <p>Aprenda a usar dados e IA para tomar decisões mais rápidas, precisas e com menor risco em cenários de alta complexidade.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🔄</div>
+                    <h3>Gestão de mudança</h3>
+                    <p>Domine técnicas comprovadas para liderar transformações culturais e tecnológicas sem comprometer operações atuais.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🚀</div>
+                    <h3>Inovação sustentável</h3>
+                    <p>Construa um sistema de inovação contínua que mantém sua organização relevante mesmo em mercados disruptivos.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">👥</div>
+                    <h3>Rede executiva</h3>
+                    <p>Acesso a uma rede exclusiva de líderes C-level enfrentando desafios similares e compartilhando insights estratégicos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Methodology Section -->
+    <section class="methodology-section" id="metodologia">
+        <div class="container-narrow">
+            <div class="section-header">
+                <p class="section-label">Metodologia exclusiva</p>
+                <h2 class="section-title">Um processo estruturado para transformação acelerada</h2>
+                <p class="section-subtitle">Desenvolvida ao longo de 25 anos liderando transformações em organizações de alto desempenho, esta metodologia combina frameworks estratégicos com aplicação prática.</p>
+            </div>
+            <div class="methodology-steps">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Diagnóstico estratégico profundo</h3>
+                        <p>Análise completa da maturidade digital da sua organização, identificação de gaps críticos, mapeamento de oportunidades de alto impacto e avaliação da prontidão cultural para transformação.</p>
+                    </div>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Visão de futuro e posicionamento</h3>
+                        <p>Definição clara de onde você quer posicionar a organização em 3-5 anos, identificação de tecnologias emergentes relevantes para seu setor e construção de cenários estratégicos.</p>
+                    </div>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Roadmap de implementação</h3>
+                        <p>Criação de um plano detalhado e realista com quick wins, projetos estruturantes, alocação de recursos, KPIs claros e gestão de riscos para cada fase da transformação.</p>
+                    </div>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Execução e ajustes</h3>
+                        <p>Acompanhamento próximo durante implementação, sessões de troubleshooting, ajustes de rota baseados em resultados e desenvolvimento contínuo de capacidades organizacionais.</p>
+                    </div>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h3>Consolidação e evolução</h3>
+                        <p>Institucionalização de processos de inovação, criação de cultura data-driven, preparação de sucessores e estabelecimento de sistemas de aprendizado contínuo.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Program Details -->
+    <section class="program-section">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-label">Estrutura do programa</p>
+                <h2 class="section-title">O que está incluído na mentoria</h2>
+            </div>
+            <div class="program-grid">
+                <div class="program-card">
+                    <h3>Sessões individuais</h3>
+                    <ul>
+                        <li>12 sessões de mentoria individual (90 minutos cada)</li>
+                        <li>Agenda flexível adaptada à sua rotina executiva</li>
+                        <li>Sessões presenciais ou online conforme necessidade</li>
+                        <li>Foco 100% nos seus desafios específicos</li>
+                        <li>Confidencialidade absoluta</li>
+                    </ul>
+                </div>
+                <div class="program-card">
+                    <h3>Recursos exclusivos</h3>
+                    <ul>
+                        <li>Framework proprietário de implementação de IA</li>
+                        <li>Templates e ferramentas de diagnóstico</li>
+                        <li>Biblioteca de casos de estudo reais</li>
+                        <li>Acesso a relatórios de tendências e pesquisas</li>
+                        <li>Material de leitura personalizado</li>
+                    </ul>
+                </div>
+                <div class="program-card">
+                    <h3>Suporte contínuo</h3>
+                    <ul>
+                        <li>WhatsApp direto para questões urgentes</li>
+                        <li>Revisão de documentos e apresentações estratégicas</li>
+                        <li>Feedback em decisões críticas</li>
+                        <li>Conexões com especialistas quando necessário</li>
+                        <li>Acompanhamento de progresso entre sessões</li>
+                    </ul>
+                </div>
+                <div class="program-card">
+                    <h3>Rede executiva</h3>
+                    <ul>
+                        <li>Acesso a comunidade exclusiva de ex-mentorados</li>
+                        <li>2 encontros trimestrais de networking</li>
+                        <li>Grupo privado para troca de experiências</li>
+                        <li>Conexão com outros líderes C-level</li>
+                        <li>Oportunidades de colaboração estratégica</li>
+                    </ul>
+                </div>
+                <div class="program-card">
+                    <h3>Entregáveis concretos</h3>
+                    <ul>
+                        <li>Diagnóstico completo de maturidade digital</li>
+                        <li>Roadmap estratégico de implementação de IA</li>
+                        <li>Plano de gestão de mudança organizacional</li>
+                        <li>Framework de governança de dados e IA</li>
+                        <li>Modelo de mensuração de ROI</li>
+                    </ul>
+                </div>
+                <div class="program-card">
+                    <h3>Duração e formato</h3>
+                    <ul>
+                        <li>Programa de 6 meses (extensível se necessário)</li>
+                        <li>Sessões quinzenais no primeiro trimestre</li>
+                        <li>Sessões mensais no segundo trimestre</li>
+                        <li>Início imediato após confirmação</li>
+                        <li>Acompanhamento de 30 dias pós-programa</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-label">Resultados reais</p>
+                <h2 class="section-title">O que dizem executivos que passaram pela mentoria</h2>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">A mentoria com Ricardo foi o investimento mais estratégico que fiz na minha carreira. Em 6 meses, implementamos IA em 4 processos críticos e reduzimos custos operacionais em 23%. Mais importante: ganhei clareza sobre como posicionar nossa empresa nos próximos 5 anos. O ROI foi mensurável desde o terceiro mês.</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">CP</div>
+                        <div class="author-info">
+                            <h4>Cláudia Pereira</h4>
+                            <p>CEO, Empresa de Tecnologia Financeira</p>
+                        </div>
+                    </div>
+                    <div class="rating">★★★★★</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">Estava enfrentando resistência interna para implementar transformação digital. Ricardo não apenas me ajudou a desenvolver a estratégia técnica, mas principalmente me ensinou a liderar a mudança cultural. Hoje temos uma organização completamente diferente, data-driven e preparada para o futuro. Nossa receita cresceu 34% no último ano.</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">MS</div>
+                        <div class="author-info">
+                            <h4>Marcelo Santos</h4>
+                            <p>CFO, Grupo Varejista Nacional</p>
+                        </div>
+                    </div>
+                    <div class="rating">★★★★★</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">O que mais valorizo é a experiência prática. Ricardo já viveu os desafios que enfrento. Cada sessão trouxe insights acionáveis que implementei na semana seguinte. O roadmap que construímos juntos está guiando nossa transformação e já apresentamos resultados significativos ao board. Valeu cada centavo investido.</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">AF</div>
+                        <div class="author-info">
+                            <h4>André Ferreira</h4>
+                            <p>CTO, Indústria Manufatureira</p>
+                        </div>
+                    </div>
+                    <div class="rating">★★★★★</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- For Whom -->
+    <section class="for-whom-section">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-label" style="color: var(--accent-gold);">Esta mentoria é para você?</p>
+                <h2 class="section-title" style="color: white;">Perfil ideal do participante</h2>
+                <p class="section-subtitle" style="color: rgba(255,255,255,0.8);">Esta mentoria foi desenhada especificamente para líderes C-level que estão comprometidos com transformação real e têm autonomia para implementar mudanças estratégicas.</p>
+            </div>
+            <div class="for-whom-grid">
+                <div class="for-whom-card">
+                    <h3>CEOs e presidentes</h3>
+                    <p>Que precisam liderar transformação digital e posicionar a organização competitivamente na era da IA</p>
+                </div>
+                <div class="for-whom-card">
+                    <h3>CTOs e CIOs</h3>
+                    <p>Responsáveis por implementar estratégias tecnológicas e modernizar infraestrutura digital</p>
+                </div>
+                <div class="for-whom-card">
+                    <h3>CFOs</h3>
+                    <p>Buscando otimizar processos com IA, implementar analytics avançados e tomar decisões data-driven</p>
+                </div>
+                <div class="for-whom-card">
+                    <h3>COOs</h3>
+                    <p>Focados em eficiência operacional, automação inteligente e transformação de processos</p>
+                </div>
+                <div class="for-whom-card">
+                    <h3>Diretores executivos</h3>
+                    <p>Em transição para posições C-level que querem se preparar para desafios de liderança sênior</p>
+                </div>
+                <div class="for-whom-card">
+                    <h3>Conselheiros</h3>
+                    <p>Que assessoram empresas em transformação digital e querem aprofundar conhecimento em IA estratégica</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Investment -->
+    <section class="investment-section" id="investimento">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-label">Investimento</p>
+                <h2 class="section-title">Um investimento estratégico no seu futuro</h2>
+                <p class="section-subtitle">Esta mentoria representa menos de 0,1% do valor que você já gera anualmente, mas pode multiplicar exponencialmente seu impacto e legado profissional.</p>
+            </div>
+            <div class="investment-card">
+                <div class="investment-header">
+                    <h3>Programa completo de mentoria executiva</h3>
+                    <div class="investment-price">R$ 15.000</div>
+                    <p class="investment-installment">ou 12x de R$ 1.375 no cartão</p>
+                </div>
+                <div class="investment-body">
+                    <div class="investment-includes">
+                        <h4>Tudo que está incluído:</h4>
+                        <ul>
+                            <li>12 sessões individuais de 90 minutos (valor: R$ 24.000)</li>
+                            <li>Diagnóstico completo de maturidade digital (valor: R$ 8.000)</li>
+                            <li>Roadmap estratégico personalizado (valor: R$ 12.000)</li>
+                            <li>Acesso ilimitado via WhatsApp por 6 meses (inestimável)</li>
+                            <li>Framework proprietário de implementação de IA</li>
+                            <li>Templates e ferramentas executivas exclusivas</li>
+                            <li>Acesso à rede executiva de ex-mentorados</li>
+                            <li>2 encontros trimestrais de networking</li>
+                            <li>Revisão de documentos e apresentações estratégicas</li>
+                            <li>Biblioteca completa de casos e pesquisas</li>
+                            <li>Acompanhamento de 30 dias pós-programa</li>
+                            <li>Certificado de conclusão do programa executivo</li>
+                        </ul>
+                    </div>
+                    <div class="investment-cta">
+                        <a href="#contato" class="btn-primary">Quero garantir minha vaga agora</a>
+                    </div>
+                    <div class="investment-guarantee">
+                        <p><strong>Garantia de satisfação:</strong> Se após as duas primeiras sessões você sentir que o programa não está alinhado às suas expectativas, devolvemos 100% do seu investimento, sem perguntas. Seu único risco é não dar o primeiro passo.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-label">Perguntas frequentes</p>
+                <h2 class="section-title">Tudo que você precisa saber</h2>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">Como funciona a dinâmica das sessões de mentoria?</div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Cada sessão dura 90 minutos e é completamente personalizada aos seus desafios específicos. Nos encontramos quinzenalmente no primeiro trimestre (fase de diagnóstico e planejamento intensivo) e mensalmente no segundo trimestre (fase de implementação e ajustes). As sessões podem ser presenciais em São Paulo ou online via videoconferência, conforme sua preferência e agenda. Entre as sessões, você tem acesso direto via WhatsApp para questões urgentes e feedback rápido em decisões críticas.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Preciso ter conhecimento técnico profundo em IA para participar?</div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Não. Esta mentoria é focada em liderança estratégica, não em implementação técnica. Você precisa entender as implicações estratégicas da IA para seu negócio, como tomar decisões de investimento e como liderar transformações - não precisa saber programar ou entender algoritmos em detalhes. Vamos construir sua fluência em IA executiva, o suficiente para liderar com confiança e fazer as perguntas certas aos seus times técnicos.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Qual o tamanho ideal da empresa para este programa?</div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            A mentoria foi desenhada para líderes de empresas com faturamento anual acima de R$ 50 milhões, sejam elas médias empresas em crescimento acelerado ou grandes corporações estabelecidas. O que importa não é o tamanho absoluto, mas sim a complexidade dos desafios estratégicos que você enfrenta e a capacidade de implementar transformações significativas. Se você lidera centenas de pessoas e toma decisões que impactam milhões em receita, este programa é para você.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Quanto tempo de dedicação semanal o programa exige?</div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Além das sessões quinzenais/mensais de 90 minutos, recomendo dedicar 2-3 horas semanais para leituras, reflexões e implementação dos insights discutidos. No entanto, o programa é flexível e se adapta à sua rotina executiva. Muitos mentorados aproveitam voos e finais de semana para o trabalho de reflexão. O mais importante é o compromisso com a aplicação prática - não é um curso teórico, mas uma transformação real que você implementa enquanto aprende.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">O programa é confidencial? Posso discutir questões sensíveis?</div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Absolutamente. Confidencialidade é fundamental para uma mentoria efetiva. Tudo que é discutido nas sessões está protegido por acordo de confidencialidade rigoroso. Muitos executivos compartilham desafios estratégicos altamente sensíveis, dilemas de liderança pessoais e questões que não podem discutir nem com seus boards. Este é um espaço seguro para pensar em voz alta, testar ideias e explorar alternativas sem julgamento. Nunca compartilho informações de mentorados, nem mesmo que trabalho com determinadas empresas, sem autorização explícita.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Quantas vagas estão disponíveis por trimestre?</div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Trabalho com no máximo 8 executivos simultaneamente para garantir disponibilidade e qualidade de atendimento. Isso significa apenas 2-3 novas vagas por trimestre, já que mentorias têm duração de 6 meses. Esta limitação intencional garante que posso dar atenção individualizada a cada mentorado e estar disponível quando você precisar. Se as vagas do trimestre atual já foram preenchidas, você entra em lista prioritária para o próximo ciclo.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">E se minha empresa quiser patrocinar o programa?</div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Muitas empresas reconhecem o valor estratégico de investir no desenvolvimento de seus líderes C-level e patrocinam o programa. Nestes casos, emito nota fiscal corporativa e posso, se desejado, fornecer relatórios trimestrais sobre os temas trabalhados (sempre respeitando a confidencialidade de questões pessoais e sensíveis). Também existe a possibilidade de desenhar programas customizados para múltiplos executivos da mesma organização. Entre em contato para discutirmos a melhor estrutura.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Qual a diferença desta mentoria para um MBA executivo ou curso de IA?</div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            MBAs e cursos são excelentes para fundamentos teóricos e networking, mas seguem um currículo padronizado. Esta mentoria é 100% personalizada aos seus desafios específicos, sua indústria, seu contexto organizacional e seus objetivos de carreira. Não há teoria desconectada da prática - cada sessão resulta em ações concretas que você implementa na semana seguinte. Além disso, você tem acesso direto a alguém que já esteve na sua posição, enfrentou os mesmos dilemas e pode compartilhar experiências práticas, não apenas conceitos acadêmicos.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Como funciona a garantia de satisfação?</div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Após as duas primeiras sessões (aproximadamente 1 mês de programa), se você sentir que a mentoria não está entregando o valor esperado ou não está alinhada às suas necessidades, basta me comunicar e faço o reembolso integral de 100% do investimento, sem burocracia ou perguntas constrangedoras. Acredito que você só deve pagar por algo que está gerando valor real. Esta garantia remove qualquer risco da sua decisão e demonstra minha confiança na qualidade do programa.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Qual o próximo passo para iniciar o programa?</div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            O primeiro passo é agendar uma conversa estratégica de 30 minutos comigo, sem compromisso. Nesta chamada, vou entender seus principais desafios, objetivos e contexto organizacional. Você terá a oportunidade de fazer perguntas sobre o programa e avaliar se há fit. Se decidirmos que faz sentido trabalharmos juntos, já saímos da conversa com a primeira sessão agendada e você recebe acesso aos materiais preparatórios. O programa pode iniciar em até 7 dias após a confirmação. Clique no botão abaixo para acessar minha agenda.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="cta-section" id="contato">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Pronto para liderar a transformação que sua organização precisa?</h2>
+                <p>Apenas 2-3 vagas disponíveis neste trimestre. A janela de oportunidade para liderar na era da IA está se fechando rapidamente. Seus concorrentes já estão se movimentando.</p>
+                <a href="/cdn-cgi/l/email-protection#23404c4d5742574c63514a404251474c424f4e464a47420d404c4e0d41511c505641494640571e6a4d57465146505046034d42036e464d574c514a4203665b464056574a5542" class="btn-primary">Agendar conversa estratégica</a>
+                <p class="cta-urgency">⏰ Vagas limitadas - Próximo ciclo inicia em 15 dias</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p><strong>Dr. Ricardo Almeida</strong> - Mentoria Executiva</p>
+            <p><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="066569687267726946746f6567746269676a6b636f62672865696b286474">[email&#160;protected]</a> | +55 11 99999-9999</p>
+            <p>São Paulo - SP, Brasil</p>
+            <div class="footer-legal">
+                <p>© 2024 Ricardo Almeida Consulting. Todos os direitos reservados.</p>
+                <p>Esta é uma landing page de portfólio. Nomes de empresas e pessoas são fictícios.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                const isActive = item.classList.contains('active');
+                
+                // Close all items
+                document.querySelectorAll('.faq-item').forEach(faqItem => {
+                    faqItem.classList.remove('active');
+                });
+                
+                // Open clicked item if it wasn't active
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll animation for elements
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.problem-card, .benefit-card, .step-card, .testimonial-card, .program-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
